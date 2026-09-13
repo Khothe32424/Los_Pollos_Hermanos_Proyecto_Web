@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Pollos Hermanos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos del carrito */
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cart-empty h2 {
+            font-size: 2.5rem;
+            color: var(--text-light);
+        }
+        .cart-empty p {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: 10px;
+        }
+        .cart-empty .btn-primary {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--white);
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+        .cart-item:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-info h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        .cart-item-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-right: 20px;
+        }
+        .btn-remove {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 0 8px;
+        }
+        .btn-remove:hover {
+            color: var(--primary-color);
+        }
+        .cart-summary {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .cart-total {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .cart-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-clear {
+            background: #eee;
+            color: var(--text-dark);
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-clear:hover {
+            background: #ddd;
+        }
+        .btn-checkout {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .btn-checkout:hover {
+            background: #b71c1c;
+        }
+        @media (max-width: 600px) {
+            .cart-item {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .cart-item-price {
+                margin-right: 10px;
+            }
+            .cart-summary {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            .cart-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">🍗 <span>Pollos Hermanos</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#promos">Promociones</a></li>
+                    <li><a href="index.html#menu">Menú</a></li>
+                    <li><a href="historia.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </nav>
+            <button class="btn-pedir" id="btn-header-pedir" style="position:relative;">
+                🛒 Carrito <span id="cart-count" style="background:var(--primary-color); color:white; border-radius:50%; padding:2px 8px; font-size:0.8rem; margin-left:5px;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEL CARRITO -->
+    <section class="section" style="padding-top: 100px;">
+        <div class="container cart-container">
+            <h2 class="section-title">🛒 Mi Carrito</h2>
+            <div id="cart-items-wrapper">
+                <!-- Aquí se renderizan los items con JavaScript -->
+            </div>
+            <div id="cart-summary" style="display: none;">
+                <!-- Resumen -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Pollos Hermanos</h3>
+                <p>El mejor pollo a la brasa de la ciudad. Tradición, sabor y calidad en cada bocado.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📞 (01) 555-4321</p>
+                <p>📍 Av. La Peruanidad 123, Lima</p>
+                <p>✉️ pedidos@labrasadorada.pe</p>
+            </div>
+            <div class="footer-col">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 12:00 PM - 10:00 PM</p>
+                <p>Viernes a Domingo: 12:00 PM - 11:30 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pollos Hermanos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Lógica específica del carrito
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCart();
+            updateCartCount();
+        });
+
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const wrapper = document.getElementById('cart-items-wrapper');
+            const summary = document.getElementById('cart-summary');
+
+            if (cart.length === 0) {
+                wrapper.innerHTML = `
+                    <div class="cart-empty">
+                        <h2>🛒 Tu carrito está vacío</h2>
+                        <p>¡Explora nuestro menú y añade tus productos favoritos!</p>
+                        <a href="index.html#menu" class="btn-primary">Ver Menú</a>
+                    </div>
+                `;
+                summary.style.display = 'none';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const precioNumerico = parseFloat(item.price.replace('S/ ', '').replace(',', '.'));
+                total += precioNumerico;
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.description || ''}</p>
+                        </div>
+                        <div class="cart-item-price">${item.price}</div>
+                        <button class="btn-remove" data-index="${index}" title="Eliminar">✕</button>
+                    </div>
+                `;
+            });
+
+            wrapper.innerHTML = html;
+
+            // Resumen
+            summary.style.display = 'flex';
+            summary.innerHTML = `
+                <div class="cart-total">Total: S/ ${total.toFixed(2)}</div>
+                <div class="cart-actions">
+                    <button class="btn-clear" id="clear-cart">🗑️ Vaciar carrito</button>
+                    <button class="btn-checkout" id="checkout-btn">✅ Finalizar pedido</button>
+                </div>
+            `;
+
+            // Event listeners
+            document.querySelectorAll('.btn-remove').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    removeFromCart(index);
+                });
+            });
+
+            document.getElementById('clear-cart').addEventListener('click', function() {
+                if (confirm('¿Vaciar todo el carrito?')) {
+                    clearCart();
+                }
+            });
+
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                alert('✅ Prototipo: Tu pedido ha sido enviado. Pronto te contactaremos.');
+                // Opcional: vaciar carrito después de "comprar"
+                // clearCart();
+            });
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCount();
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            renderCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.length;
+            const badge = document.getElementById('cart-count');
+            if (badge) badge.textContent = count;
+        }
+
+        // El botón del header también lleva al carrito
+        document.getElementById('btn-header-pedir').addEventListener('click', function() {
+            window.location.href = 'carrito.html';
+        });
+    </script>
+</body>
+</html>
