@@ -192,7 +192,17 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+document.addEventListener('click', function(e){
+ if(e.target && e.target.id === 'checkout-btn'){
+    if(cart.length === 0){
+       alert('El carrito está vacío');
+       return;
+    }
+    window.location.href='pago.html';
+ }
+});
+</script>
     <script>
         // Lógica específica del carrito
         document.addEventListener('DOMContentLoaded', function() {
@@ -261,7 +271,7 @@
             });
 
             document.getElementById('checkout-btn').addEventListener('click', function() {
-                alert('✅ Prototipo: Tu pedido ha sido enviado. Pronto te contactaremos.');
+                window.location.href='pago.html';
                 // Opcional: vaciar carrito después de "comprar"
                 // clearCart();
             });
@@ -292,6 +302,16 @@
         document.getElementById('btn-header-pedir').addEventListener('click', function() {
             window.location.href = 'carrito.html';
         });
-    </script>
+    
+document.addEventListener('click', function(e){
+ if(e.target && e.target.id === 'checkout-btn'){
+    if(cart.length === 0){
+       alert('El carrito está vacío');
+       return;
+    }
+    window.location.href='pago.html';
+ }
+});
+</script>
 </body>
 </html>
