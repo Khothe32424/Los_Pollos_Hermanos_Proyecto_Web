@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pago - Pollos Hermanos</title>
+<link rel="stylesheet" href="pago.css">
+</head>
+<body>
+<header><h1>Pollos Hermanos</h1><h2>Finalizar compra</h2></header>
+
+<main class="checkout">
+<section class="metodos">
+<h2>Método de pago</h2>
+
+<label><input type="radio" name="pago" value="yape" onclick="mostrarPago('yape')"> 📱 Yape</label>
+<label><input type="radio" name="pago" value="plin" onclick="mostrarPago('plin')"> 📱 Plin</label>
+<label><input type="radio" name="pago" value="tarjeta" onclick="mostrarPago('tarjeta')"> 💳 Tarjeta crédito/débito</label>
+<label><input type="radio" name="pago" value="efectivo" onclick="mostrarPago('efectivo')"> 💵 PagoEfectivo</label>
+<label><input type="radio" name="pago" value="contra" onclick="mostrarPago('contra')"> 🚚 Pago contra entrega</label>
+<label><input type="radio" name="pago" value="banco" onclick="mostrarPago('banco')"> 🏦 Transferencia bancaria (BCP, BBVA, Interbank, Scotiabank)</label>
+
+<div id="detallePago"></div>
+</section>
+
+<section class="resumen">
+<h2>Resumen</h2>
+<div id="productos"></div>
+<p>Subtotal: S/ <span id="subtotal">0</span></p>
+<p>Envío: <span id="envio">Incluido</span></p>
+<h2>Total: S/ <span id="total">5</span></h2>
+<button onclick="confirmarPago()">Confirmar pago</button>
+</section>
+</main>
+<script src="pago.js"></script>
+</body></html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" viewBox="0 0 700 420">
+<rect width="700" height="420" rx="28" fill="#e8b75f"/>
+<circle cx="350" cy="165" r="110" fill="#fff" fill-opacity=".55"/>
+<text x="350" y="200" text-anchor="middle" font-size="95" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍗</text>
+<rect x="65" y="300" width="570" height="72" rx="18" fill="#fff" fill-opacity=".92"/>
+<text x="350" y="346" text-anchor="middle" font-size="30" font-weight="700" fill="#333" font-family="Arial, sans-serif">Nuggets de pollo</text>
+</svg>

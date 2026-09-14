@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollos Hermanos | Tu Pollería Favorita</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                🍗 <span>Pollos Hermanos</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#promos">Promociones</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="contacto.html"> Contáctanos</a></li>
+                    <li><a href="historia.html"> Nosotros</a></li>
+                </ul>
+            </nav>
+            <button class="btn-pedir" id="btn-header-pedir" style="position:relative;">
+            🛒 Carrito <span id="cart-count" style="background:var(--primary-color); color:white; border-radius:50%; padding:2px 8px; font-size:0.8rem; margin-left:5px;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>El verdadero sabor a la brasa, directo a tu mesa.</h1>
+            <p>Piel crujiente, carne jugosa y las mejores cremas caseras para acompañar tus momentos especiales.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" id="btn-hero-pedir">🛵 Pedir Delivery</button>
+                <a href="#menu" class="btn-secondary">Ver Menú</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones -->
+    <section id="promos" class="section">
+        <div class="container">
+            <h2 class="section-title">🔥 Promociones de la Semana</h2>
+            <div class="grid-3">
+                <div class="card promo-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1606622830825-f86a241e573e?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="card-body">
+                        <h3>Combo Familiar</h3>
+                        <p>1 Pollo a la Brasa + Papas Familiares + Ensalada Clásica + Gaseosa 1.5L</p>
+                        <span class="price">S/ 65.90</span>
+                        <button class="btn-add">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="card promo-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1615486171448-4fdcb3850117?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="card-body">
+                        <h3>Dúo Brasa</h3>
+                        <p>1/2 Pollo a la Brasa + Porción de Papas + Ensalada + 2 Chichas Moradas</p>
+                        <span class="price">S/ 38.00</span>
+                        <button class="btn-add">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="card promo-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="card-body">
+                        <h3>Antojo Personal</h3>
+                        <p>1/4 de Pollo + Papas + Ensalada + Vaso de Chicha</p>
+                        <span class="price">S/ 22.50</span>
+                        <button class="btn-add">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestro Menú -->
+    <section id="menu" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">🍗 Nuestro Menú</h2>
+            <div class="menu-categories">
+                <button class="menu-btn active">Pollos</button>
+                <button class="menu-btn">Parrillas</button>
+                <button class="menu-btn">Piqueos</button>
+                <button class="menu-btn">Bebidas</button>
+            </div>
+            
+            <div class="menu-list" id="menu-list"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Pollos Hermanos</h3>
+                <p>El mejor pollo a la brasa de la ciudad. Tradición, sabor y calidad en cada bocado.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📞 (01) 555-4321</p>
+                <p>📍 Av. La Peruanidad 123, Lima</p>
+                <p>✉️ pedidos@polloshermanos.pe</p>
+            </div>
+            <div class="footer-col">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 12:00 PM - 10:00 PM</p>
+                <p>Viernes a Domingo: 12:00 PM - 11:30 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pollos Hermanos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
