@@ -75,4 +75,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ---------- MENÚ HAMBURGUESA (RESPONSIVE) ----------
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinksEl = document.querySelector('.nav-links');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function closeMobileMenu() {
+        if (!hamburgerBtn || !navLinksEl) return;
+        hamburgerBtn.classList.remove('active');
+        navLinksEl.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+        if (!hamburgerBtn || !navLinksEl) return;
+        hamburgerBtn.classList.add('active');
+        navLinksEl.classList.add('active');
+        if (navOverlay) navOverlay.classList.add('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    if (hamburgerBtn && navLinksEl) {
+        hamburgerBtn.addEventListener('click', () => {
+            const isOpen = navLinksEl.classList.contains('active');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+
+        // Cierra el menú al hacer clic en cualquier enlace de navegación
+        navLinksEl.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Cierra el menú al hacer clic en el fondo oscuro
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        // Si el usuario agranda la ventana y vuelve a vista de escritorio,
+        // se asegura de cerrar el menú móvil para evitar estados inconsistentes
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMobileMenu();
+        });
+    }
+
 });
