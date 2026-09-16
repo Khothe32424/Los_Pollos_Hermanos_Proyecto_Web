@@ -340,3 +340,106 @@ footer {
         font-size: 2.5rem;
     }
 }
+
+/* Ajuste botones menú */
+.menu-list .btn-add{
+    padding: 10px 18px;
+    width: auto;
+    font-size: 14px;
+    border-radius: 20px;
+    display:inline-block;
+}
+
+/* Tarjetas del menú con imagen como promociones */
+.menu-product-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+.menu-product-card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+/* Menú visual corregido */
+#menu-list.menu-list{
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+.menu-product-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.10);
+    transition:transform .2s ease;
+}
+.menu-product-card:hover{ transform:translateY(-4px); }
+.menu-product-card img{
+    width:100%;
+    height:175px;
+    object-fit:cover;
+    display:block;
+}
+.menu-product-card .card-body{
+    padding:16px;
+}
+.menu-product-card .btn-add{
+    width:auto;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:.9rem;
+}
+
+/* Hero fachada clara sin texto dentro de imagen */
+.hero{
+    background-image: url("img/hero_pollos_claro.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.hero::before{
+    background: rgba(0,0,0,0.20) !important;
+}
+.hero h1,
+.hero p,
+.hero button{
+    position: relative;
+    z-index: 2;
+}
+
+.auth-box{max-width:500px;margin:80px auto;padding:35px;background:#fff;border-radius:15px;box-shadow:0 5px 20px #0002}
+.auth-box input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ddd}
+.auth-box button{width:100%;padding:13px;background:#d92323;color:white;border:0;border-radius:8px;font-weight:bold}
+
+/* Fondo para inicio de sesión y registro */
+body:has(.auth-box){
+    min-height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url("img/login_fondo.png") center/cover no-repeat fixed !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+body:has(.auth-box) .auth-box{
+    width:360px;
+    max-width:90%;
+    margin:0;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(4px);
+}
+
+body:has(.auth-box) .auth-box h2{
+    color:#d92323;
+    text-align:center;
+}
+
+body:has(.auth-box) .auth-box button{
+    background:#d92323;
+}
