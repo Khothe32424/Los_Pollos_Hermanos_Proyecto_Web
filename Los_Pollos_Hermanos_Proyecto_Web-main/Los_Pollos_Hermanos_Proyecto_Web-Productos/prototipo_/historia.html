@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia | Pollos Hermanos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .historia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .historia-text h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .historia-text p {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .historia-text strong {
+            color: var(--text-dark);
+        }
+        .historia-img img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .valores {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .valor-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .valor-card:hover {
+            transform: translateY(-8px);
+        }
+        .valor-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .valor-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .historia-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .historia-img {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">🍗 <span>Pollos Hermanos</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#promos">Promociones</a></li>
+                    <li><a href="index.html#menu">Menú</a></li>
+                    <li><a href="historia.html" style="color: var(--primary-color); font-weight:700;"> Nosotros</a></li>
+                    <li><a href="contacto.html"> Contáctanos</a></li>
+                </ul>
+            </nav>
+            <button class="btn-pedir" id="btn-header-pedir" style="position:relative;">
+            🛒 Carrito <span id="cart-count" style="background:var(--primary-color); color:white; border-radius:50%; padding:2px 8px; font-size:0.8rem; margin-left:5px;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="historia-grid">
+                <div class="historia-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>
+                        <strong>Pollos Hermanos</strong> nació en 1995 en un pequeño horno de barrio, con la receta secreta de la tía Petunia. 
+                        Lo que empezó como un sueño familiar, hoy es un referente del auténtico pollo a la brasa en Lima.
+                    </p>
+                    <p>
+                        Nuestro secreto está en el <strong>adobo de 12 especias</strong> y en la cocción lenta sobre carbón vegetal, 
+                        que logra esa piel dorada y crujiente, y una carne jugosa que enamora a primera mordida.
+                    </p>
+                    <p>
+                        Seguimos siendo una empresa familiar, con los mismos valores de <strong>calidad, honestidad y pasión</strong> 
+                        por servir el mejor pollo a la brasa de la ciudad.
+                    </p>
+                    <p>
+                        ¡Te esperamos con los brazos abiertos para que disfrutes de nuestra tradición!
+                    </p>
+                </div>
+                <div class="historia-img">
+                    <!-- Imagen ilustrativa (puedes cambiarla por una propia) -->
+                    <img src="pollo.webp" alt="Nuestro pollo a la brasa">
+                </div>
+            </div>
+
+            <!-- Valores -->
+            <div class="valores">
+                <h2 class="section-title">Nuestros Valores</h2>
+                <div class="valores-grid">
+                    <div class="valor-card">
+                        <h3>🔥 Calidad</h3>
+                        <p>Seleccionamos los mejores insumos y mantenemos altos estándares de preparación.</p>
+                    </div>
+                    <div class="valor-card">
+                        <h3>❤️ Familia</h3>
+                        <p>Somos una empresa familiar que trata a cada cliente como parte de nuestra casa.</p>
+                    </div>
+                    <div class="valor-card">
+                        <h3>🌟 Sabor</h3>
+                        <p>Nuestra receta única y el carbón vegetal nos dan un sabor inigualable.</p>
+                    </div>
+                    <div class="valor-card">
+                        <h3>🤝 Confianza</h3>
+                        <p>Más de 25 años sirviendo a la comunidad con honestidad y transparencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Pollos Hermanos</h3>
+                <p>El mejor pollo a la brasa de la ciudad. Tradición, sabor y calidad en cada bocado.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📞 (01) 555-4321</p>
+                <p>📍 Av. La Peruanidad 123, Lima</p>
+                <p>✉️ pedidos@labrasadorada.pe</p>
+            </div>
+            <div class="footer-col">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 12:00 PM - 10:00 PM</p>
+                <p>Viernes a Domingo: 12:00 PM - 11:30 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pollos Hermanos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Interacción para el botón "Pide Aquí" (ya está en script.js, pero por si acaso)
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnHeader = document.getElementById('btn-header-pedir');
+            if (btnHeader) {
+                btnHeader.addEventListener('click', function() {
+                    alert('🛒 Prototipo: Aquí se abriría el carrito de compras.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

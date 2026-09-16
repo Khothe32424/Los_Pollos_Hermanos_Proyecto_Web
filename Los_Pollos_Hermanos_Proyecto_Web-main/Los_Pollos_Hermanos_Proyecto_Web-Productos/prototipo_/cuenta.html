@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Cuenta | Pollos Hermanos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="account-page">
+<header class="navbar"><div class="container nav-container"><div class="logo">🍗 <span>Pollos Hermanos</span></div></div></header>
+<div class="account-box">
+<h1>👤 Mi Cuenta</h1>
+<div class="account-grid">
+<section><h2>Mi perfil</h2>
+<label>Apodo</label><input id="apodo" placeholder="Ej: PollitoLoco">
+<label>Teléfono</label><input id="tel">
+<label>Dirección principal</label><input id="dir">
+<button onclick="guardarPerfil()">Guardar cambios</button>
+</section>
+<section><h2>📍 Mis direcciones</h2><textarea id="direcciones" placeholder="Casa: Av. ...
+Trabajo: Av. ..."></textarea><button onclick="guardarDirecciones()">Guardar direcciones</button></section>
+</div>
+<section class="orders"><h2>🍗 Historial de pedidos</h2>
+<div class="order-card">Pedido #001 - Pollo entero + papas<br><b>Estado:</b> Entregado<br><b>Total:</b> S/ 58.00</div>
+<div class="order-card">Pedido #002 - Combo familiar<br><b>Estado:</b> En preparación<br><b>Total:</b> S/ 65.90</div>
+</section>
+<button onclick="cerrarSesion()">Cerrar sesión</button>
+</div>
+<script>
+const u=JSON.parse(localStorage.getItem('usuario')||'{}');
+apodo.value=u.apodo||'';tel.value=u.tel||'';dir.value=u.dir||'';direcciones.value=u.direcciones||'';
+function guardarPerfil(){u.apodo=apodo.value;u.tel=tel.value;u.dir=dir.value;localStorage.setItem('usuario',JSON.stringify(u));alert('Perfil actualizado');}
+function guardarDirecciones(){u.direcciones=direcciones.value;localStorage.setItem('usuario',JSON.stringify(u));alert('Direcciones guardadas');}
+function cerrarSesion(){localStorage.removeItem('usuario');location.href='login.html';}
+</script>
+
+<div class="profile-actions">
+<a href="index.html" class="btn-shopping">← Seguir comprando</a>
+<button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+</div>
+<script>
+function cerrarSesion(){
+ localStorage.removeItem("usuarioActivo");
+ window.location.href="login.html";
+}
+</script>
+</body></html>

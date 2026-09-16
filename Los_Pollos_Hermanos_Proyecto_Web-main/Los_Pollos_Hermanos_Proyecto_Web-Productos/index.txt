@@ -1,0 +1,5 @@
+Nombres:Piero Salas 
+Apellidos Salas Sanchez
+Carrera:Ingenieria de sistemas
+Universidad:UTP
+Hobbie:Programar
