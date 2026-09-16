@@ -1,0 +1,40 @@
+
+body{font-family:Arial;background:#f5f5f5;margin:0}
+header{text-align:center;padding:20px}
+.checkout{display:flex;gap:20px;max-width:1000px;margin:auto}
+.metodos,.resumen{background:white;padding:25px;border-radius:15px;box-shadow:0 2px 8px #ccc}
+.metodos{flex:2}.resumen{flex:1}
+label{display:block;padding:14px;border-bottom:1px solid #ddd}
+button{width:100%;padding:15px;background:#111;color:white;border:0;border-radius:10px}
+input,select{padding:10px;width:90%;margin:5px}
+.qr{width:180px}
+
+/* Ajustes menu productos */
+.menu-item, .product-card {
+    overflow: hidden;
+}
+
+.menu-item img, .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.btn-add, .menu-item button {
+    width: auto !important;
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+    border-radius: 20px !important;
+    display: inline-block !important;
+    margin-top: 10px;
+}
+
+/* Fondo personalizado para pagina de pago */
+body.pago-page,
+body {
+    background-image: linear-gradient(rgba(255,255,255,.78), rgba(255,255,255,.78)), url('img/fondo_pago.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
